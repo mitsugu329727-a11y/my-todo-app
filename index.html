@@ -3,38 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDoアプリ</title>
+  <title>Tasks — ToDoアプリ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>ToDoリスト</h1>
+  <div class="app">
 
-    <form id="todo-form" class="input-area">
-      <input
-        type="text"
-        id="todo-input"
-        placeholder="新しいタスクを入力..."
-        autocomplete="off"
-        maxlength="100"
-      >
-      <button type="submit">追加</button>
+    <header class="header">
+      <div class="header-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </div>
+      <h1>Tasks</h1>
+    </header>
+
+    <form id="todo-form" class="input-row" novalidate>
+      <div class="input-wrap">
+        <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="新しいタスクを追加..."
+          autocomplete="off"
+          maxlength="120"
+          spellcheck="false"
+        >
+      </div>
+      <button type="submit" class="btn-add">
+        <span>追加</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
     </form>
 
-    <div class="filter-area">
+    <nav class="filters">
       <button class="filter-btn active" data-filter="all">すべて</button>
       <button class="filter-btn" data-filter="active">未完了</button>
       <button class="filter-btn" data-filter="completed">完了済み</button>
-    </div>
+    </nav>
 
-    <ul id="todo-list"></ul>
+    <ul id="todo-list" role="list" aria-label="タスク一覧"></ul>
 
-    <div class="footer">
-      <span id="remaining-count"></span>
-      <button id="clear-completed" class="clear-btn">完了済みを削除</button>
-    </div>
+    <footer class="footer">
+      <span id="remaining-count" class="count-label"></span>
+      <button id="clear-completed" class="btn-ghost">完了済みを削除</button>
+    </footer>
+
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>

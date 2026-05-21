@@ -80,6 +80,29 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  flex: 1;
+}
+
+.game-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.game-link:hover {
+  color: var(--accent-light);
+  border-color: rgba(124,92,252,0.4);
+  background: var(--elevated);
 }
 
 /* =============================================

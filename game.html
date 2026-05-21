@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECHO — メモリーゲーム</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="game-wrap">
+
+    <header class="game-header">
+      <a href="index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15,18 9,12 15,6"/>
+        </svg>
+        Tasks
+      </a>
+      <h1 class="game-title">ECHO</h1>
+      <div class="score-box">
+        <span class="meta-label">スコア</span>
+        <span id="score" class="score-num">0</span>
+      </div>
+    </header>
+
+    <div class="board-area">
+      <div id="board" class="board">
+        <button class="tile" data-idx="0" aria-label="タイル1" disabled></button>
+        <button class="tile" data-idx="1" aria-label="タイル2" disabled></button>
+        <button class="tile" data-idx="2" aria-label="タイル3" disabled></button>
+        <button class="tile" data-idx="3" aria-label="タイル4" disabled></button>
+      </div>
+
+      <!-- Start / Game-over overlay sits inside board-area -->
+      <div id="overlay" class="overlay">
+        <div class="overlay-inner">
+          <p class="overlay-eyebrow" id="overlay-eyebrow">光るパターンを覚えて、同じ順にタップ</p>
+          <h2 class="overlay-heading" id="overlay-heading">ECHO</h2>
+          <p class="overlay-sub" id="overlay-sub"></p>
+          <button id="action-btn" class="action-btn">スタート</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="meta-label">レベル</span>
+        <span id="level" class="stat-val level-val">1</span>
+      </div>
+      <span id="status-msg" class="status-msg">準備OK</span>
+      <div class="stat stat-right">
+        <span class="meta-label">最高スコア</span>
+        <span id="best" class="stat-val best-val">0</span>
+      </div>
+    </div>
+
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
